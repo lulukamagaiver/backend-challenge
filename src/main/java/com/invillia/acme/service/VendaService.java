@@ -2,6 +2,7 @@ package com.invillia.acme.service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -68,14 +69,13 @@ public class VendaService {
 	}
 
 	private boolean reembolso(Venda venda) {
-		LocalDateTime data10Dias = LocalDateTime
-				.of(venda.getConfirmacao().toLocalDate(), venda.getCadastro()
-						.toLocalTime()).plusDays(10);
+		long dias = venda.getConfirmacao().until(LocalDateTime.now(), ChronoUnit.DAYS);
+		
 		try {
-			if (data10Dias.equals(LocalDateTime.now())) {
-				return true;
-			} else {
+			if (dias > 10) {
 				return false;
+			} else {
+				return true;
 			}
 		} catch (Exception e) {
 			throw new RecursoNaoEncontradoException("Recurso não encontrado!");

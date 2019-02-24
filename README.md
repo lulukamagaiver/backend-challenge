@@ -1,53 +1,53 @@
-# Invillia recruitment challenge
+# Desafio de recrutamento de Invillia
 
-[![Build Status](https://travis-ci.org/shelsonjava/invillia.svg?branch=master)](https://travis-ci.org/shelsonjava/invillia)
+[! [Build Status] (https://travis-ci.org/shelsonjava/invillia.svg?branch=master)] (https://travis-ci.org/shelsonjava/invillia)
 
-![Invillia Logo](https://invillia.com/public/assets/img/logo-invillia.svg)
-[Invillia](https://https://www.invillia.com/) - A transformação começa aqui.
+! [Invillia Logo] (https://invillia.com/public/assets/img/logo-invillia.svg)
+[Invillia] (https: // https: //www.invillia.com/) - A transformação começa aqui.
 
-The ACME company is migrating their monolithic system to a microservice architecture and you’re responsible to build their MVP (minimum viable product)  .
+A empresa ACME está migrando seu sistema monolítico para uma arquitetura de microsserviço e você é responsável por criar seu MVP (produto mínimo viável).
 https://en.wikipedia.org/wiki/Minimum_viable_product
 
-Your challenge is:
-Build an application with those features described below, if you think the requirements aren’t detailed enough please leave a comment (portuguese or english) and proceed as best as you can.
+Seu desafio é:
+Crie um aplicativo com os recursos descritos abaixo, se você acha que os requisitos não são detalhados o suficiente, deixe um comentário (português ou inglês) e prossiga da melhor forma possível.
 
-You can choose as many features you think it’s necessary for the MVP,  IT’S NOT necessary build all the features, we strongly recommend to focus on quality over quantity, you’ll be evaluated by the quality of your solution.
+Você pode escolher quantos recursos julgar necessários para o MVP, NÃO É necessário criar todos os recursos, recomendamos enfaticamente que se concentre na qualidade em vez da quantidade. Você será avaliado pela qualidade de sua solução.
 
-If you think something is really necessary but you don’t have enough time to implement please at least explain how you would implement it.
+Se você acha que algo é realmente necessário, mas não tem tempo suficiente para implementar, explique, pelo menos, como você o implementaria.
 
-## Tasks
+## Tarefas
 
-Your task is to develop one (or more, feel free) RESTful service(s) to:
-* Create a **Store**
-* Update a **Store** information
-* Retrieve a **Store** by parameters
-* Create an **Order** with items
-* Create a **Payment** for an **Order**
-* Retrieve an **Order** by parameters
-* Refund **Order** or any **Order Item**
+Sua tarefa é desenvolver um (ou mais, sinta-se livre) serviço (s) RESTful para:
+* Crie uma ** Loja **
+* Atualize uma informação da ** Loja **
+* Recupere uma ** Loja ** por parâmetros
+* Crie um ** Pedido ** com itens
+* Crie um ** Pagamento ** para um ** Pedido **
+* Recupere um ** Pedido ** por parâmetros
+* Reembolso ** Pedido ** ou qualquer ** Item de pedido **
 
-Fork this repository and submit your code with partial commits.
+Bifurque este repositório e envie seu código com commits parciais.
 
-## Business Rules
+## Regras do negócio
 
-* A **Store** is composed by name and address
-* An **Order** is composed by address, confirmation date and status
-* An **Order Item** is composed by description, unit price and quantity.
-* A **Payment** is composed by status, credit card number and payment date
-* An **Order** just should be refunded until ten days after confirmation and the payment is concluded.
+* A ** Loja ** é composta por nome e endereço
+* Um ** Pedido ** é composto por endereço, data de confirmação e status
+* Um ** Item de Pedido ** é composto por descrição, preço unitário e quantidade.
+* A ** Pagamento ** é composto por status, número de cartão de crédito e data de pagamento
+* Um ** Pedido ** só deve ser reembolsado até dez dias após a confirmação e o pagamento é concluído.
 
-## Non functional requirements
+## Requisitos não Funcionais
 
-Your service(s) must be resilient, fault tolerant, responsive. You should prepare it/them to be highly scalable as possible.
+Seu (s) serviço (s) deve (m) ser resiliente (s), tolerante a falhas, responsivo (s). Você deve prepará-lo para ser altamente escalável quanto possível.
 
-The process should be closest possible to "real-time", balancing your choices in order to achieve the expected
-scalability.
+O processo deve ser o mais próximo possível de "tempo real", equilibrando suas escolhas para alcançar o esperado
+escalabilidade.
 
-## Nice to have features (describe or implement):
-* Asynchronous processing
-* Database
+## É bom ter recursos (descrever ou implementar):
+* Processamento assíncrono
+* Base de dados
 * Docker
 * AWS
-* Security
+* Segurança
 * Swagger
-* Clean Code
+* Código Limpo

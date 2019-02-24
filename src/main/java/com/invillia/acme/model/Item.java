@@ -28,7 +28,7 @@ public class Item implements Serializable{
 	
 	@NotNull
 	@ManyToOne
-	private Produto produto;
+	private Produto produto = new Produto();
 	
 	@NotNull
 	private Integer quantidade;

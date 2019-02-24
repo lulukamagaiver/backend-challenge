@@ -3,6 +3,7 @@ package com.invillia.acme.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -20,6 +21,8 @@ import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+
+import org.springframework.format.support.FormatterPropertyEditorAdapter;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -45,17 +48,15 @@ public class Venda implements Serializable {
 	
 	@JsonIgnoreProperties("venda")
 	@Valid
-	@NotEmpty
 	@OneToMany(mappedBy = "venda", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Item> itens;
+	private List<Item> itens = new ArrayList<Item>();
 	
 	@NotNull
 	private BigDecimal frete;
 	
 	private BigDecimal total;
 	
-	@NotEmpty
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "forma_pagamento", nullable = false, length = 20)
 	private FormaPagamento formaPagamento;
 	
