@@ -44,10 +44,10 @@ O processo deve ser o mais próximo possível de "tempo real", equilibrando suas
 escalabilidade.
 
 ## É bom ter recursos (descrever ou implementar):
-* Processamento assíncrono
-* Base de dados
-* Docker
+* Processamento assíncrono OK
+* Base de dados - H2 ok
+* Docker - Não implementado por falta de tempo
 * AWS
-* Segurança
-* Swagger
-* Código Limpo
+* Segurança - Implementado na regra de negocio
+* Swagger - Implementado
+* Código Limpo - OK
