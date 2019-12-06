@@ -8,6 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @author Marcus Vinicius
+ * 6 de dez de 2019
+ */
 @Entity
 @Table(name = "cliente")
 public class Cliente implements Serializable {

@@ -1,5 +1,9 @@
 package com.invillia.acme.util;
 
+/**
+ * @author Marcus Vinicius
+ * 6 de dez de 2019
+ */
 public class NegocioException extends RuntimeException {
 
 	/**

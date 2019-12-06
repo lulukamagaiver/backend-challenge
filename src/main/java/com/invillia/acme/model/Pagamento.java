@@ -1,44 +1,43 @@
 package com.invillia.acme.model;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.br.CNPJ;
+import com.invillia.acme.enums.StatusPagamento;
 
 /**
  * @author Marcus Vinicius
  * 6 de dez de 2019
  */
 @Entity
-@Table(name = "loja")
-public class Loja implements Serializable{
+@Table(name = "pagamento")
+public class Pagamento implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -7603861083201740553L;
-	
+	private static final long serialVersionUID = -453380393191583895L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotEmpty
-	@Column(name = "razao_social")
-	private String razaoSocial;
+	private String numeroCartao;
 	
-	private String ie;
+	private LocalDateTime dataPagamento;
 	
-	@NotNull
-	@CNPJ
-	private String cnpj;
+	@Column(name = "status_pagamento")
+    @Enumerated(EnumType.STRING)
+	private StatusPagamento statusPagamento;
 
 	public Long getId() {
 		return id;
@@ -48,28 +47,28 @@ public class Loja implements Serializable{
 		this.id = id;
 	}
 
-	public String getRazaoSocial() {
-		return razaoSocial;
+	public String getNumeroCartao() {
+		return numeroCartao;
+	}
+	
+	public void setNumeroCartao(String numeroCartao) {
+		this.numeroCartao = numeroCartao;
 	}
 
-	public void setRazaoSocial(String razaoSocial) {
-		this.razaoSocial = razaoSocial;
+	public LocalDateTime getDataPagamento() {
+		return dataPagamento;
 	}
 
-	public String getIe() {
-		return ie;
+	public void setDataPagamento(LocalDateTime dataPagamento) {
+		this.dataPagamento = dataPagamento;
 	}
-
-	public void setIe(String ie) {
-		this.ie = ie;
+	
+	public StatusPagamento getStatusPagamento() {
+		return statusPagamento;
 	}
-
-	public String getCnpj() {
-		return cnpj;
-	}
-
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
+	
+	public void setStatusPagamento(StatusPagamento statusPagamento) {
+		this.statusPagamento = statusPagamento;
 	}
 
 	@Override
@@ -88,7 +87,7 @@ public class Loja implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Loja other = (Loja) obj;
+		Pagamento other = (Pagamento) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -96,4 +95,5 @@ public class Loja implements Serializable{
 			return false;
 		return true;
 	}
+
 }

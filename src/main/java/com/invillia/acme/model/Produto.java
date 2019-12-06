@@ -9,6 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @author Marcus Vinicius
+ * 6 de dez de 2019
+ */
 @Entity
 @Table(name = "produto")
 public class Produto implements Serializable{

@@ -3,6 +3,11 @@ package com.invillia.acme.util;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+
+/**
+ * @author Marcus Vinicius
+ * 6 de dez de 2019
+ */
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class RecursoNaoEncontradoException extends RuntimeException{
 

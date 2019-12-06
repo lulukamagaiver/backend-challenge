@@ -5,6 +5,10 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+/**
+ * @author Marcus Vinicius
+ * 6 de dez de 2019
+ */
 @Embeddable
 public class Endereco implements Serializable{
 

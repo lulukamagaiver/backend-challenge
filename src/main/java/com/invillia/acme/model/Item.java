@@ -10,6 +10,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+/**
+ * @author Marcus Vinicius
+ * 6 de dez de 2019
+ */
 @Entity
 @Table(name = "item")
 public class Item implements Serializable{
