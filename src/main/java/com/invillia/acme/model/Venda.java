@@ -3,7 +3,6 @@ package com.invillia.acme.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,17 +21,17 @@ import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.invillia.acme.enums.StatusVenda;
 
 /**
- * @author Marcus Vinicius
- * 6 de dez de 2019
+ * @author Marcus Vinicius 6 de dez de 2019
  */
 @Entity
 @Table(name = "venda")
 public class Venda implements Serializable {
-	
+
 	/**
 	 * 
 	 */
@@ -41,33 +40,38 @@ public class Venda implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	private LocalDateTime dataVenda;
-	
+
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dataVenda;
+
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate confirmacao;
-	
+
 	@ManyToOne
 	private Cliente cliente = new Cliente();
-	
+
 	@JsonIgnoreProperties("venda")
 	@Valid
 	@OneToMany(mappedBy = "venda", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Item> itens = new ArrayList<Item>();
-	
+
 	@NotNull
 	private BigDecimal frete;
-	
+
 	private BigDecimal total;
-	
-	@ManyToOne
-	private Pagamento pagamento;
-	
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Pagamento pagamento = new Pagamento();
+
 	@Embedded
 	private Endereco enderecoEntrega;
-	
+
 	@Column(name = "status_venda")
-    @Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.STRING)
 	private StatusVenda statusVenda;
+
+	@ManyToOne
+	private Loja loja;
 
 	public Long getId() {
 		return id;
@@ -77,18 +81,18 @@ public class Venda implements Serializable {
 		this.id = id;
 	}
 
-	public LocalDateTime getDataVenda() {
+	public LocalDate getDataVenda() {
 		return dataVenda;
 	}
 
-	public void setDataVenda(LocalDateTime dataVenda) {
+	public void setDataVenda(LocalDate dataVenda) {
 		this.dataVenda = dataVenda;
 	}
-	
+
 	public LocalDate getConfirmacao() {
 		return confirmacao;
 	}
-	
+
 	public void setConfirmacao(LocalDate confirmacao) {
 		this.confirmacao = confirmacao;
 	}
@@ -132,13 +136,29 @@ public class Venda implements Serializable {
 	public void setTotal(BigDecimal total) {
 		this.total = total;
 	}
-	
+
 	public Endereco getEnderecoEntrega() {
 		return enderecoEntrega;
 	}
 
 	public void setEnderecoEntrega(Endereco enderecoEntrega) {
 		this.enderecoEntrega = enderecoEntrega;
+	}
+
+	public Loja getLoja() {
+		return loja;
+	}
+
+	public void setLoja(Loja loja) {
+		this.loja = loja;
+	}
+	
+	public StatusVenda getStatusVenda() {
+		return statusVenda;
+	}
+	
+	public void setStatusVenda(StatusVenda statusVenda) {
+		this.statusVenda = statusVenda;
 	}
 
 	@Override
@@ -164,6 +184,6 @@ public class Venda implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-}
+	}
 
 }

@@ -1,6 +1,7 @@
 package com.invillia.acme.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -12,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.invillia.acme.enums.StatusPagamento;
 
 /**
@@ -33,7 +35,8 @@ public class Pagamento implements Serializable {
 	
 	private String numeroCartao;
 	
-	private LocalDateTime dataPagamento;
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dataPagamento;
 	
 	@Column(name = "status_pagamento")
     @Enumerated(EnumType.STRING)
@@ -55,11 +58,11 @@ public class Pagamento implements Serializable {
 		this.numeroCartao = numeroCartao;
 	}
 
-	public LocalDateTime getDataPagamento() {
+	public LocalDate getDataPagamento() {
 		return dataPagamento;
 	}
 
-	public void setDataPagamento(LocalDateTime dataPagamento) {
+	public void setDataPagamento(LocalDate dataPagamento) {
 		this.dataPagamento = dataPagamento;
 	}
 	

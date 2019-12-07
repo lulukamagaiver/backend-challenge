@@ -5,5 +5,5 @@ package com.invillia.acme.enums;
  * 6 de dez de 2019
  */
 public enum StatusPagamento {
-	CONFIRMADO, AGUARDANDO, NAO_AUTORIZADO
+	AGUARDANDO, CONFIRMADO, NAO_AUTORIZADO
 }
