@@ -6,7 +6,7 @@
 
 	<groupId>com.invillia.acme</groupId>
 	<artifactId>invillia</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0.Final</version>
 	<packaging>jar</packaging>
 
 	<name>invillia</name>

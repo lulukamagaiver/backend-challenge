@@ -33,7 +33,7 @@ public class SwaggerConfig {
 
 	private ApiInfo metaInfo() {
 
-		ApiInfo apiInfo = new ApiInfo("Invillia API REST", "API REST ERP", "1.0", "Termos de serviço",
+		ApiInfo apiInfo = new ApiInfo("Invillia API REST", "API REST ERP", "2.0", "Termos de serviço",
 				new Contact("Marcus Vinicius G. Oliveira", "http://invillia.com", "luluka.magaiver@gmail.com"),
 				"Apache License Version 2.0", "https://www.apache.org/licesen.html", new ArrayList<VendorExtension>());
 

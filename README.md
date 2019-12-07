@@ -1,5 +1,7 @@
 # Desafio de recrutamento de Invillia
 
+Swagger - (http://localhost:8080/swagger-ui.html)
+
 [! [Build Status] (https://travis-ci.org/shelsonjava/invillia.svg?branch=master)] (https://travis-ci.org/shelsonjava/invillia)
 
 ! [Invillia Logo] (https://invillia.com/public/assets/img/logo-invillia.svg)
@@ -45,8 +47,7 @@ escalabilidade.
 
 ## É bom ter recursos (descrever ou implementar):
 * Processamento assíncrono OK
-* Base de dados - H2 ok
-* Docker - Não implementado por falta de tempo
+* Base de dados - MySql ok
 * AWS
 * Segurança - Implementado na regra de negocio
 * Swagger - Implementado
